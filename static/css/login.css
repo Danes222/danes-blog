@@ -1,0 +1,13 @@
+.cont-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    width: 80%;
+    padding: 6vh;
+    background-color: rgb(255, 255, 255);
+}
+.cont-login-content{
+    display: flex;
+    justify-content: center;
+    padding: 2vh;
+}

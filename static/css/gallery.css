@@ -1,0 +1,11 @@
+.cont-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: space-around;
+}
+.item {
+    margin: 1vh;
+    width: 30%;
+    height: 30%;
+}

@@ -1,0 +1,51 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+
+<br><br><br>
+<div class="container cont">
+    <h1 class="header mb-4">Welcome to Admin Page</h1>
+    <div class="row">
+        <div class="col-sm-2">
+            <table style="padding: 20px;">
+                <tr>
+                    <th><a href="{% url 'create-article' %}" class="btn btn-primary">Create New Article</a></th>
+                </tr>
+                <tr>
+                    <th><a href="{% url 'logout' %}" class="btn btn-danger">Logout</a></th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-10">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nomor</th>
+                        <th>Key</th>
+                        <th>Title</th>
+                        <th>Date Created</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for blog in blogs %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ blog.key }}</td>
+                            <td>{{ blog.title }}</td>
+                            <td>{{ blog.date_created }}</td>
+                            <td>
+                                <a href="{% url 'edit-article' blog.id %}" class="btn btn-primary btn-sm">Edit</a>
+                                <br>
+                                <a href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmHapus" onclick="if(confirm('yakin mau menghapus blog {{ blog.title }}?')){window.location='/delete-article/{{blog.id}}'}else{return false;};">Hapus</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+{% endblock %}

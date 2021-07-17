@@ -1,0 +1,45 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+
+{% include 'home/baner.html' %}
+<div class="container cont">
+    <div class="row">
+        <div class="col-md-8">
+            <h1><b class="text-special">{{ title }}</b></h1>
+            <div class="row">
+                <div class="col-sm-7">
+                    <p><b>{{ key }}</b></p>
+                </div>
+                <div class="col-sm-5">
+                    <small>posted in {{ date }}</small>
+                </div>
+            </div>
+            
+            <p>
+                {{ content }}
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search'  %}">
+                <input class="mr-sm-2 searchfield" style="background-color: rgba(52, 100, 100, 0.103); border: none; border-left: 5px solid teal; padding: 1vh; outline: 3px solid transparent; margin-bottom: 10px; width: 100%;" type="search" placeholder="Search articles..." aria-label="Search" name="qs" autocomplete="off">
+            </form>
+            <h5>Related to this article</h5>
+            {% for sug in suggestion %}
+            <div class="mc">
+                <a href="{% url 'blog' sug.id %}" class="linkcard" id="linkblog">
+                    <div class="mycard" style="background-image: url('{{ sug.baner.url }}');">
+                        <div class="mycardtitle">
+                            <small>posted in {{sug.date_created}}</small>
+                            <h5>{{ sug.key }}</h5>
+                            <p>{{ sug.title }}..</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

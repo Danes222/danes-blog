@@ -1,0 +1,10 @@
+.baner-caption {
+    border-left: 6px solid white;
+    height: 20vh;
+    width: 40vh;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    margin-bottom: 15%;
+    overflow: hidden;
+}

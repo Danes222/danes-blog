@@ -1,0 +1,22 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+    <br><br><br>
+    <div class="container cont">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Gallery</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="cont-gallery">
+                    {% for image in images %}
+                    <img src="{{ image.baner.url }}" alt="" class="item">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

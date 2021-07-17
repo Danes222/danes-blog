@@ -1,0 +1,35 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+<br><br><br>
+<div class="container cont">
+    <div class="row">
+        <div class="col-sm-5">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search'  %}">
+                <input class="mr-sm-2 searchfield" style="background-color: rgba(52, 100, 100, 0.103); border: none; border-left: 5px solid teal; padding: 1vh; outline: 3px solid transparent; margin-bottom: 10px; width: 100%;" type="search" placeholder="Search articles..." aria-label="Search" name="qs" autocomplete="off">
+            </form>
+            <small>{{ count }} articles matches with {{ qs }}</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+            {% for blog in blogs %}
+            <div class="mc">
+                <a href="{% url 'blog' blog.id %}" class="linkcard" id="linkblog">
+                    <div class="mycard" style="background-image: url('{{ blog.baner.url }}');">
+                        <div class="mycardtitle">
+                            <small>posted in {{blog.date_created}}</small>
+                            <h5>{{ blog.key }}</h5>
+                            <p>{{ blog.title }}..</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-7">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+</div>
+{% endblock %}

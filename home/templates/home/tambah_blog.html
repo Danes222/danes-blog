@@ -1,0 +1,6 @@
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ createForm.as_p }}
+    <button type="submit">Submit</button><br>
+    <a href="{% url 'adm' %}">Back to admin page...</a>
+</form>

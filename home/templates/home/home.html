@@ -1,0 +1,38 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+
+{% include 'home/jumbotron.html' %}
+<div class="container cont">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Welcome to <b class="text-special">Danes.com</b></h1>
+            <p><b>Art tutorial | Design tips | Contemporary Art | Graphic design.</b></p>
+            <p>a personal blog of <b class="text-special"><a href="#">Danes Nizam Virnanda</a></b></p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, tempore! Atque suscipit ea exercitationem amet dolorem porro sapiente aperiam nulla fugiat impedit! Soluta doloremque aperiam consequatur delectus placeat corporis, inventore quia quod dolore consequuntur iste voluptatem dolor quisquam ad eos illum sunt eaque odit voluptatibus totam consectetur minima iusto assumenda obcaecati! Qui ipsa neque officiis ea fugiat fugit distinctio magni repellat accusamus, mollitia velit minima sed libero similique natus vel quisquam cum modi odio sapiente nisi eius perspiciatis atque quia. Harum nobis odit architecto assumenda qui dolor praesentium, velit necessitatibus recusandae voluptate quibusdam nam veritatis porro sequi fugit? Assumenda, amet at ipsa corporis consequatur expedita veritatis quos beatae explicabo rem voluptatibus dicta odit eaque officia minima nam tempora vero. Dolor deserunt itaque facere mollitia, iusto quidem voluptatum in, possimus harum quod corporis ipsa. Eaque commodi quae illo nam dolores eveniet recusandae adipisci reiciendis nostrum laborum harum iure, voluptate quis. Nulla, nobis architecto ullam quas explicabo ducimus at quibusdam. Odit voluptates labore porro delectus obcaecati reprehenderit ex similique ducimus veniam blanditiis. Possimus quasi debitis rerum maiores beatae eos, explicabo nisi veritatis fugiat quam amet aspernatur eaque neque, a nemo? Commodi magni amet, molestias ab et placeat fugit maiores ad sit debitis?
+            </p>
+        </div>
+        <div class="col-lg-4">
+            
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}">
+                <input class="mr-sm-2 searchfield" style="background-color: rgba(52, 100, 100, 0.103); border: none; border-left: 5px solid teal; padding: 1vh; outline: 3px solid transparent; margin-bottom: 10px; width: 100%;" type="search" placeholder="Search articles..." aria-label="Search" name="qs" autocomplete="off">
+            </form>
+            <h5>Newest article</h5>
+            {% for blog in blogs %}
+            <div class="mc">
+                <a href="{% url 'blog' blog.id %}" class="linkcard" id="linkblog">
+                    <div class="mycard" style="background-image: url('{{ blog.baner.url }}');">
+                        <div class="mycardtitle">
+                            <small>posted in {{blog.date_created}}</small>
+                            <h5>{{ blog.key }}</h5>
+                            <p>{{ blog.title }}..</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

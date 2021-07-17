@@ -1,0 +1,14 @@
+h1 b.text-special {
+    color: teal;
+}
+body .cont {
+    margin-top: -32px;
+    width: 100%;
+    padding: 6vh;
+    background-color: white;
+}
+.filler{
+    height: 300vh;
+}
+form input.searchfield {background-color: rgba(52, 100, 100, 0); border: none; border-bottom: 3px solid teal; padding: 1vh; outline: 3px solid transparent;
+}

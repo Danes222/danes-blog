@@ -1,0 +1,22 @@
+<div class="jumbotron" style="padding: 0;">
+    
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" style="height: 70vh;">
+          {% for blog in blogs %}
+          <div class="carousel-item active" style="background-image: url('{{ blog.baner.url }}');">
+            <div class="carousel-caption d-none d-md-block baner-caption">
+                <h3>{{ blog.key }}</h3>
+                <p>{{ blog.title }}</p>
+            </div>
+          </div>
+          {% endfor %}
+
+          <div class="" style="">
+          </div>
+
+          <div class="" style="">
+          </div>
+        </div>
+    </div>
+    <div class="carousel-gradation"></div>
+</div>

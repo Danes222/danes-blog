@@ -15,10 +15,11 @@
                     <small>posted in {{ date }}</small>
                 </div>
             </div>
-            
-            <p>
-                {{ content }}
-            </p>
+            <div style="text-align: justify;">
+                <p>
+                    {{ content }}
+                </p>
+            </div>
         </div>
         <div class="col-lg-4">
             <form class="form-inline my-2 my-lg-0" action="{% url 'search'  %}">

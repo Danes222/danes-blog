@@ -23,6 +23,15 @@ def gallery(request):
     }
     return render(request, 'home/gallery.html', context)
 def contact(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        if email and message:
+            obj = MyMessages.objects.create(email=email, messages=message)
+            obj.save()
+        messages.success(request, 'Thank you for the feedback !')
+        return redirect('contact')
     context = {
         'title' : 'Contact'
     }
@@ -55,6 +64,7 @@ def adm(request):
         'blogs' : blogs
     }
     return render(request, 'home/admin.html', context)
+@login_required(login_url='login')
 def editArticle(request, pk):
     a = Blog.objects.get(id=pk)
     createArticleForm = CreateArticleForm(instance=a)
@@ -71,6 +81,7 @@ def editArticle(request, pk):
         'form' : createArticleForm
     }
     return render(request, 'home/edit.html', context)
+@login_required(login_url='login')
 def deleteArticle(request, pk):
     blog = Blog.objects.get(id=pk)
     if request.method == 'GET':
@@ -80,7 +91,7 @@ def deleteArticle(request, pk):
         'judul' : 'Hapus article',
     }
     return render(request, 'home/delete.html', context)
-
+@login_required(login_url='login')
 def createArticle(request):
     createArticleForm = CreateArticleForm()
     if request.method == 'POST':

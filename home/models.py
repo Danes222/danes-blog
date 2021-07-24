@@ -12,3 +12,10 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+class MyMessages(models.Model):
+    email = models.EmailField(max_length=200)
+    messages = models.TextField(max_length=300)
+
+    def __str__(self):
+        return self.email

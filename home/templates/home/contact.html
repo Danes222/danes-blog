@@ -6,32 +6,53 @@
     <div class="container cont">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Contact</h1><br>
+                <h1>Contact</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-5">
-                <div class="form-row">
-                    <div class="form-group col-sm-12">
-                        <input class="form-control" type="email" placeholder="your email.." name="email">
-                        <small>we will never share your email with anyone.</small>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <input class="form-control" type="textarea" placeholder="Your messages.." name="password">
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <button type="submit" class="btn btn-secondary">Send</button>
-                    </div>
+                {% for mess in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{mess}}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+                {% endfor %}
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-sm-5">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <input type="hidden" name="id">
+                        <div class="form-group col-sm-12">
+                            <input class="form-control" type="email" required placeholder="your email.." name="email">
+                            <small>we will never share your email with anyone.</small>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <textarea name="message" class="form-control" style="resize: none;" placeholder="Your Messages" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <button type="submit" style="background-color: teal; color: white;" class="btn">Send</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-lg-6">
-                <h3>Also check my social media</h3>
-                <ul style="padding: 2vh;">
+                <h3 class="mb-3">Also check my social media</h3>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn"><a target="_blank" href="https://facebook.com/Danes006"><img src="{% static '/img/facebook.png' %}" alt=""><p>Danes Artworks</p></a></button>
+                    <button type="button" class="btn"><a target="_blank" href="https://github.com/Danes222"><img src="{% static '/img/github.png' %}" alt=""><p>Danes222</p></a></button>
+                    <button type="button" class="btn"><a target="_blank" href="https://www.instagram.com/daanes_iy/"><img src="{% static '/img/instagram.png' %}" alt=""><p>Daanes_iy</p></a></button>
+                  </div>
+                <!-- <ul style="padding: 2vh;">
                     <li><a target="_blank" href="https://facebook.com/Danes006"><img src="{% static '/img/facebook.png' %}" alt=""><p>Danes Artworks</p></a></li>
                     <li><a target="_blank" href="https://github.com/Danes222"><img src="{% static '/img/github.png' %}" alt=""><p>Danes222</p></a></li>
                     <li><a target="_blank" href="https://www.instagram.com/daanes_iy/"><img src="{% static '/img/instagram.png' %}" alt=""><p>Daanes_iy</p></a></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
         <div class="row">

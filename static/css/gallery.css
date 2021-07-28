@@ -1,11 +1,13 @@
 .cont-gallery{
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
-    justify-content: space-around;
+    padding: 0 4px;
 }
 .item {
-    margin: 1vh;
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    /* margin: 1vh;
     width: 30%;
-    height: 30%;
+    height: 30%; */
 }

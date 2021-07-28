@@ -28,7 +28,7 @@
             <h5>Related to this article</h5>
             {% for sug in suggestion %}
             <div class="mc">
-                <a href="{% url 'blog' sug.id %}" class="linkcard" id="linkblog">
+                <a href="{% url 'blog' sug.slug %}" class="linkcard" id="linkblog">
                     <div class="mycard" style="background-image: url('{{ sug.baner.url }}');">
                         <div class="mycardtitle">
                             <small>posted in {{sug.date_created}}</small>

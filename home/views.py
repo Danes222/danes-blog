@@ -16,7 +16,7 @@ def home(request):
     }
     return render(request, 'home/home.html', context)
 def gallery(request):
-    images = Blog.objects.all()
+    images = Blog.objects.all().order_by('-id')[:5:-1]
     context = {
         'title' : 'Gallery',
         'images' : images
@@ -123,7 +123,7 @@ def searchArticle(request):
 
 
 def blog(request, blogid):
-    blogs = Blog.objects.filter(id=blogid)
+    blogs = Blog.objects.filter(slug=blogid)
     for blog in blogs:
         title = blog.title
         key = blog.key

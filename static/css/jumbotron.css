@@ -11,7 +11,7 @@
     background-blend-mode: multiply;
 }
 .carousel-caption {
-    border-left: 6px solid white;
+    border-left: 6px solid rgb(255, 255, 255);
     height: 20vh;
     width: 30vh;
     padding: 10px;

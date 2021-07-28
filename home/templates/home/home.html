@@ -31,7 +31,7 @@
             <h5>Newest article</h5>
             {% for blog in blogs %}
             <div class="mc">
-                <a href="{% url 'blog' blog.id %}" class="linkcard" id="linkblog">
+                <a href="{% url 'blog' blog.slug %}" class="linkcard" id="linkblog">
                     <div class="mycard" style="background-image: url('{{ blog.baner.url }}');">
                         <div class="mycardtitle">
                             <small>posted in {{blog.date_created}}</small>

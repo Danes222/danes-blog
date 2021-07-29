@@ -9,13 +9,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
                 <div class="cont-gallery">
                     {% for image in images %}
-                    <img src="{{ image.banurl }}" alt="" class="item">
+                    <img src="{{ image.baner.url }}" alt="" class="item">
                     {% endfor %}
                 </div>
             </div>
+            <div class="col-sm-3"></div>
         </div>
     </div>
 

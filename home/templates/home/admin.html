@@ -6,7 +6,7 @@
 <div class="container cont">
     <h1 class="header mb-4">Welcome to Admin Page</h1>
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-12">
             <table style="padding: 20px;">
                 <tr>
                     <th><a href="{% url 'create-article' %}" class="btn btn-primary">Create New Article</a></th>
@@ -16,11 +16,13 @@
                 </tr>
             </table>
         </div>
-        <div class="col-sm-10">
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Nomor</th>
+                        <th>Id</th>
                         <th>Key</th>
                         <th>Title</th>
                         <th>Date Created</th>

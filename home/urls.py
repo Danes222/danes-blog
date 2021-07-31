@@ -15,4 +15,6 @@ urlpatterns = [
     path('delete-article/<str:pk>/', views.deleteArticle, name='delete-article'),
     path('search/', views.searchArticle, name='search'),
     path('create-article/', views.createArticle, name='create-article'),
+    path('adm/view-messages/', views.viewMessages, name='view-messages'),
+    path('adm/delete-message/<str:pk>', views.deleteMessage, name='delete-message'),
 ]

@@ -76,7 +76,6 @@ def editArticle(request, pk):
             return redirect('adm')
 
     context = {
-        'judul' : 'Edit Akun',
         'title' : 'Edit Akun',
         'form' : createArticleForm
     }
@@ -88,7 +87,7 @@ def deleteArticle(request, pk):
         blog.delete()
         return redirect('/adm')
     context = {
-        'judul' : 'Hapus article',
+        'title' : 'Hapus article',
     }
     return render(request, 'home/delete.html', context)
 @login_required(login_url='login')
@@ -104,6 +103,28 @@ def createArticle(request):
         'createForm' : createArticleForm
     }
     return render(request, 'home/tambah_blog.html', context)
+
+@login_required(login_url='login')
+def viewMessages(request):
+    mymessages = MyMessages.objects.all()
+    context = {
+        'title' : 'View Messages',
+        'mymessages' : mymessages
+    }
+    return render(request, 'home/viewmessages.html', context)
+@login_required(login_url='login')
+def deleteMessage(request, pk):
+    mymessages = MyMessages.objects.get(id=pk)
+    if request.method == 'GET':
+        mymessages.delete()
+        messages.success(request, "message successfully deleted!")
+        print(mymessages)
+        print(type(mymessages))
+        return redirect('view-messages')
+    context = {
+        'title' : 'View Messages'
+    }
+    return render(request, 'home/deletemessages.html', context)
 
 def searchArticle(request):
     blogs = Blog.objects.all()[:5:-1]

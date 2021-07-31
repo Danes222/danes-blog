@@ -1,6 +1,16 @@
-<form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ createForm.as_p }}
-    <button type="submit">Submit</button><br>
-    <a href="{% url 'adm' %}">Back to admin page...</a>
-</form>
+{% extends 'home/index.html' %}
+{% block content %}
+<div class="container cont">
+    <br><br><br>
+    
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">{{ title }}</h1>
+    </div>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ createForm.as_p }}
+        <button type="submit">Submit</button><br>
+        <a href="{% url 'adm' %}">Back to admin page...</a>
+    </form>
+</div>
+{% endblock %}

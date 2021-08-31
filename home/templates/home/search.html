@@ -18,7 +18,7 @@
                 <a href="{% url 'blog' blog.slug %}" class="linkcard" id="linkblog">
                     <div class="mycard" style="background-image: url('{{ blog.baner.url }}');">
                         <div class="mycardtitle">
-                            <small>posted in {{blog.date_created}}</small>
+                            <small>posted in {{blog.date_created}} UTC+7</small>
                             <h5>{{ blog.key }}</h5>
                             <p>{{ blog.title }}..</p>
                         </div>
@@ -27,9 +27,7 @@
             </div>
             {% endfor %}
         </div>
-        <div class="col-sm-7">
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
+
     </div>
 </div>
 {% endblock %}

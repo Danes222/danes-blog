@@ -5,3 +5,4 @@ from .models import *
 
 admin.site.register(Blog)
 admin.site.register(MyMessages)
+admin.site.register(Jumbotron)

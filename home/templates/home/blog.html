@@ -12,10 +12,10 @@
                     <p><b>{{ key }}</b></p>
                 </div>
                 <div class="col-sm-5">
-                    <small>posted in {{ date }}</small>
+                    <small>posted in {{ date }} UTC+7</small>
                 </div>
             </div>
-            <div style="text-align: justify;">
+            <div style="text-align: left;">
                 <p>
                     {{ content }}
                 </p>
@@ -31,7 +31,7 @@
                 <a href="{% url 'blog' sug.slug %}" class="linkcard" id="linkblog">
                     <div class="mycard" style="background-image: url('{{ sug.baner.url }}');">
                         <div class="mycardtitle">
-                            <small>posted in {{sug.date_created}}</small>
+                            <small>posted in {{sug.date_created}} UTC+7</small>
                             <h5>{{ sug.key }}</h5>
                             <p>{{ sug.title }}..</p>
                         </div>

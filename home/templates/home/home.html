@@ -9,7 +9,7 @@
             <h1>Welcome to <b class="text-special">Danes Artworks</b></h1>
             <p><b>Art tutorial | Design tips | Contemporary Art | Graphic design.</b></p>
             <p>a personal blog of <b class="text-special"><a href="{% url 'contact' %}">Danes Nizam Virnanda</a></b></p>
-            <div style="text-align: justify;">
+            <div style="text-align: left;">
                 <p>
                     Hello World!, Danes Artworks is a personal blog project by me, Danes Nizam Virnanda.
                 </p>
@@ -34,7 +34,7 @@
                 <a href="{% url 'blog' blog.slug %}" class="linkcard" id="linkblog">
                     <div class="mycard" style="background-image: url('{{ blog.baner.url }}');">
                         <div class="mycardtitle">
-                            <small>posted in {{blog.date_created}}</small>
+                            <small>posted in {{blog.date_created}} UTC+7</small>
                             <h5>{{ blog.key }}</h5>
                             <p>{{ blog.title }}..</p>
                         </div>

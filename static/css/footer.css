@@ -1,5 +1,9 @@
 div.ft {
+    color: aliceblue;
     padding: 4vh;
-    background-color: rgb(236, 236, 236);
+    background-color: teal;
     text-align: center;
+}
+div.ft a {
+    color: aliceblue;
 }

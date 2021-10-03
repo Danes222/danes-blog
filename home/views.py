@@ -150,17 +150,19 @@ def deleteMessage(request, pk):
 
 
 def searchArticle(request):
-    blogs = Blog.objects.all()[:5:-1]
+    blogs = reversed(Blog.objects.all().order_by('-id')[:5:-1])
+    len_blogs = False
     print(type(blogs))
     qs = request.GET['qs']
     if request.method == 'GET':
         if request.GET['qs']:
             blogs = Blog.objects.filter(title__contains=qs)
+            len_blogs = len(blogs)
     context = {
         'title': 'Search for '+qs,
         'blogs': blogs,
         'qs': qs,
-        'count': len(blogs)
+        'count': len_blogs
     }
     return render(request, 'home/search.html', context)
 

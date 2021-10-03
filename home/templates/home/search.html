@@ -8,7 +8,11 @@
             <form class="form-inline my-2 my-lg-0" action="{% url 'search'  %}">
                 <input class="mr-sm-2 searchfield" style="background-color: rgba(52, 100, 100, 0.103); border: none; border-left: 5px solid teal; padding: 1vh; outline: 3px solid transparent; margin-bottom: 10px; width: 100%;" type="search" placeholder="Search articles..." aria-label="Search" name="qs" autocomplete="off">
             </form>
-            <small>{{ count }} articles matches with {{ qs }}</small>
+            {% if qs %}
+            <small>{{ count }} articles matches with "{{ qs }}"</small>
+            {% else %}
+            <small>Showing newest articles</small>
+            {% endif %}
         </div>
     </div>
     <div class="row">

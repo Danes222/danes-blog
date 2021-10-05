@@ -12,3 +12,27 @@ body .cont {
 }
 form input.searchfield {background-color: rgba(52, 100, 100, 0); border: none; border-bottom: 3px solid teal; padding: 1vh; outline: 3px solid transparent;
 }
+
+/* Custom Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 1.4vh;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 50%;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(143, 143, 143); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #575757; 
+    transition: .5s;
+  }
